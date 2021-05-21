@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}Madlibs{% endblock %}
+
+{% block heading1 %}Madlibs{% endblock %}
+
+{% block content %} 
+    
+    <!-- <h2>Select a story template.</h2>
+    <form action="/input">
+        {% for num in range(stories|length) %}
+            <button name="story-choice" value="story{{num+1}}">Story {{num+1}}</button>
+        {% endfor %}
+    </form> -->
+
+    <label for="story-choice">Select a story template:</label>
+    <select name="story-choice" id="story-choice" form="story-form">
+    {% for num in range(stories|length) %}
+    <option value="story{{num+1}}">Story {{num+1}}</option>
+    {% endfor %}
+    </select>
+
+    <form action="/input" id="story-form">
+        <button>Submit</button>
+    </form>
+
+
+{% endblock %}
